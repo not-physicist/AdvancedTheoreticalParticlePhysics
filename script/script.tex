@@ -1,0 +1,124 @@
+\documentclass[oneside]{scrbook}
+\KOMAoptions{fontsize=11pt, paper=a4}     
+\KOMAoptions{DIV=13}                      
+
+\usepackage[utf8]{inputenc}               
+\usepackage[T1]{fontenc}                  
+\usepackage[varg]{txfonts}  			  %	Times-like fonts in support of mathematics
+\usepackage[separate-uncertainty = true]{siunitx}   	  				  
+\usepackage{enumitem}				      %	extra enumerate options
+
+% \renewcommand{\familydefault}{\rmdefault} % font to sans serif
+
+%import external graphics and where to find these
+\usepackage{graphicx}					  
+\graphicspath{{figs/}}
+
+\RequirePackage[backend=biber, style=numeric]{biblatex}
+\addbibresource{refs.bib}
+
+\usepackage[hypertexnames=false]{hyperref}
+% By default, hyperref creates internal links based on the counters. When counters are changed, the names may not be properly distinguishable internally.
+\RequirePackage[all]{hypcap}
+
+%There are a number of symbols defined inside txfonts that are also defined in amsmath
+% so you can just make these available again
+\let\iint\relax
+\let\iiint\relax
+\let\iiiint\relax
+\let\idotsint\relax
+\usepackage{amsmath}
+\usepackage{physics}
+\usepackage{mathtools}
+\usepackage{braket}
+\usepackage{slashed} % feynman slash notation
+\usepackage{simplewick} % wick contraction
+\usepackage{tikz}
+\usepackage{tikz-feynman} % feynman diagrams
+\usepackage{here} % figure[H]
+\usepackage{cancel}
+% \usepackage{cleveref}
+
+% Externalizing plots
+\usetikzlibrary{external}
+\tikzexternalize[ prefix=tikz-figs/,
+                  mode=list and make,
+                  system call={ lualatex \tikzexternalcheckshellescape -halt-on-error -interaction=batchmode -jobname="\image" "\texsource"  || rm "\image.pdf"},
+]
+
+%restart footnotes every page
+\usepackage{perpage}
+\MakePerPage{footnote}
+%symbols for footnotes
+\usepackage[symbol]{footmisc}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}} % footnote mark with special symbols
+
+% toprule and etc.
+\usepackage{booktabs}
+
+% Color
+\usepackage{xcolor}
+%%%%%%%%%%%%%%%%%%%%%%%%%% NEW COMMAND SECTION %%%%%%%%%%%%%%%%%%%%
+
+%define equal
+\newcommand{\defeq}{\vcentcolon =} 
+\newcommand{\eqdef}{= \vcentcolon}
+\newcommand{\euler}{\mathrm{e}}
+
+%Lagrange density
+\newcommand{\lag}{\mathcal{L}} 
+%Hamiltonian density
+\newcommand{\ham}{\mathcal{H}}
+\usepackage{mathrsfs}
+\newcommand{\hil}{\mathscr{H}}
+
+%identity matrix
+\usepackage{dsfont}
+\newcommand{\id}{\mathds{1}}
+
+\newcommand{\vecnab}{\pmb{\nabla}}
+\newcommand{\vecx}{\pmb{x}}
+\newcommand{\vecy}{\pmb{y}}
+\newcommand{\veck}{\pmb{k}}
+\newcommand{\vecp}{\pmb{k}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Co}{\mathbb{C}}
+\newcommand{\D}{\mathcal{D}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\diag}{\text{diag}}
+\newcommand{\sgn}{\text{sgn}}
+\newcommand{\cl}{\text{cl}}
+\newcommand{\eff}{\text{eff}}
+\newcommand{\SU}{\mathbf{SU}}
+\newcommand{\SO}{\mathbf{SO}}
+\newcommand{\SL}{\mathbf{SL}}
+\newcommand{\Uni}{\mathbf{U}}
+
+% command for neutrino or anti-neutrino
+\newcommand{\nub}[1]{\nu_#1 (\bar{\nu}_#1)} 
+
+% new unit
+\DeclareSIUnit\year{yr}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SETTINGS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\numberwithin{equation}{section}
+
+% \setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Advanced Theoretical Particle Physics}
+\author{Chenhuan Wang}
+\date{\today}
+\begin{document}
+\maketitle
+\tableofcontents
+
+\include{chapter0}
+\include{chapter1}
+\include{chapter2}
+\include{chapter3}
+
+\printbibliography
+\end{document}

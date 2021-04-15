@@ -1,0 +1,150 @@
+\setcounter{chapter}{-1}
+\chapter{Preliminaries}
+\section{Notations and conventions}
+(mostly follow Peskin and Schroeder)
+
+Metric
+\begin{equation}
+   g_{\mu\nu} = g^{\mu\nu} = \diag(+1, -1, -1, -1) \label{0.1}
+\end{equation}
+
+Scalar product of $4$-vectors $p_\mu, q_\mu$
+\begin{equation*}
+   p \cdot q = g_{\mu\nu} p^\mu q^\nu = p^\mu q_\mu
+\end{equation*}
+For momentum $p^\mu = (E_p, \pmb{p}); q^\nu = (E_q, \pmb{q})$
+\begin{equation}
+   p \cdot q = E_p E_q - \pmb{p}\cdot \pmb{q} \label{0.2}
+\end{equation}
+
+Use "natural units"
+\begin{equation*}
+   \hbar = c = 1
+\end{equation*}
+
+Pauli matrices
+\begin{equation}
+   \sigma_1 = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}; \quad
+   \sigma_2 = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix}; \quad 
+   \sigma_3 = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} \label{0.3}
+\end{equation}
+
+Dirac matrices in Dirac representation
+\begin{equation}
+   \gamma^0 = \begin{pmatrix} \id_2 & 0 \\ 0 & -\id_2 \end{pmatrix}; \quad
+   \gamma^i = \begin{pmatrix} 0 & \sigma_i \\ -\sigma_i & 0 \end{pmatrix};\quad
+   \gamma_5 = \begin{pmatrix} 0 & \id_2 \\ \id_2 & 0 \end{pmatrix}
+   \label{0.5}
+\end{equation}
+
+Chiral projectors
+\begin{equation}
+   P_{L, R} = \frac{1}{2} (1 \mp \gamma_5) \label{0.6}
+\end{equation}
+
+Dirac slash
+\begin{equation}
+   \slashed{p} = p_\mu \gamma^\mu
+   \label{0.7}
+\end{equation}
+for all $4$-vector $p_\mu$.
+
+Lorentz boost
+\begin{equation}
+   p'_\mu = \Lambda_\mu^\nu p_\nu
+   \label{0.8}
+\end{equation}
+for all $4$-vector $p_\mu$ and with $\det \Lambda = 1$. E.g.~boost in $z$-direction with velocity $\beta = v/c$
+\begin{equation}
+   \Lambda = \begin{pmatrix} \gamma & 0 & 0 & -\beta\gamma \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ -\beta \gamma & 0 & 0 & \gamma \end{pmatrix}, \gamma = \frac{1}{\sqrt{1-\beta^2}}
+   \label{0.9}
+\end{equation}
+
+Field operators (in $4$ dimensions): for bosons scalar $\phi$ and vectors $A_\mu$ with mass dimension $1$
+\begin{equation*}
+   [\phi] = [A_\mu] = \si{\giga\eV} 
+\end{equation*}
+For fermion $\psi$, mass dimension $3/2$
+\begin{equation*}
+   [\psi] = \si{\giga\eV}^{3/2}
+\end{equation*}
+
+Polarization vector $\epsilon_\mu$ is dimensionless.
+
+$4$-component spinors $u(p)$, $v(p)$ have mass dimensions $1/2$
+\begin{equation}
+   \bar u (p) u (p) = - \bar v (p) v(p) = 2m = 2 \sqrt{p^2} \label{0.11}
+\end{equation}
+
+Summation convention is to sum over repeated upper/lower indices.
+
+\section{The Standard Model}
+Based on gauge group
+\begin{equation}
+   G_\text{SM} = \SU(3)_C \times \SU(2)_L \times \Uni(1)_Y
+   \label{0.12}
+\end{equation}
+
+Particle content
+\begin{equation*}
+\begin{tabular}{ccc ccc}
+   \toprule
+   Particle & $\SU(3)$ rep. & $\SU(2)$ rep. & $I_3$ & $Y$ & Spin \\
+   \midrule
+   gluon $g$ & $8$ & $1$ & $0$ & $0$ & $1$ \\ 
+   $W$ boson & $1$ & $3$ & $\pm 1, 0$ & 0 & $1$ \\
+   $B$ boson & $1$ & $1$ & $ 0$ & 0 & $1$ \\
+   \midrule 
+   $u_L, c_L, t_L$ & $3$ & $2$ & $+ \frac{1}{2}$ & $+ \frac{1}{6}$ & $\frac{1}{2}$ \\
+   $d_L, s_L, b_L$ & $3$ & $2$ & $- \frac{1}{2}$ & $+ \frac{1}{6}$ & $\frac{1}{2}$ \\
+   $u_R, c_R, t_R$ & $3$ & $1$ & $0$ & $+ \frac{2}{3}$ & $\frac{1}{2}$ \\
+   $d_R, s_R, b_R$ & $3$ & $1$ & $0$ & $- \frac{1}{3}$ & $\frac{1}{2}$ \\
+   \midrule
+   $e_L, \mu_L, \tau_L$ & $1$ & $2$ & $-\frac{1}{2}$ & $-\frac{1}{2}$ & $\frac{1}{2}$ \\
+   $\nu_{e_L}, \nu_{\mu_L}, \nu_{\tau_L}$ & $1$ & $2$ & $+\frac{1}{2}$ & $- \frac{1}{2}$ & $\frac{1}{2}$ \\
+   $e_R, \mu_R, \tau_R$ & $1$ & $1$ & $0$ & $-1$ & $\frac{1}{2}$ \\
+   \midrule
+   Higgs boson $\phi$ & $1$ & $2$ & $\pm \frac{1}{2}$ & $+\frac{1}{2}$ & $0$ \\
+   \bottomrule
+\end{tabular}
+\end{equation*}
+
+In this convention
+\begin{equation}
+   Q = I_3 + Y \label{0.13}
+\end{equation}
+
+Lagrangian
+\begin{align}
+      \lag_\text{SM} &= \sum_\text{fermions} \bar\psi_i \slashed{D} \psi_i  &&\text{matter kinetic term}\notag \\
+                     &- \frac{1}{4} \left[ \sum_{a=1}^8 F_{\mu\nu}^a F_a^{\mu\nu} + \sum_{k=1}^3 W_{\mu\nu}^k W^{\mu\nu}_k + B_{\mu\nu} B^{\mu\nu} \right]  &&\text{pure gauge}\notag \\
+                     &+ \left( D_\mu \phi \right)^\dagger D^\mu \phi && \text{Higgs kinetic term}\notag\\
+                     &- m^2 \phi^\dagger \phi - \frac{\lambda}{2} (\phi^\dagger \phi)^2 && \text{Higgs potential} \notag \\
+                     &- \left[ \sum_{j=1}^3 f_j^{(l)} \overline{e^-}_{jR} \phi^\dagger L_{jL} + \sum_{j,l} f_{jk}^{(d)} \bar d_{jR} \phi^\dagger \cdot q_{kL} - \sum_{j,k=1}^3 f_{jR}^{(u)} \bar u_{jR} \phi \cdot q_{L k} + h.c. \right] && \text{Yukawa interactions}
+   \label{0.14}
+\end{align}
+
+\begin{equation}
+   D_\mu = \partial_\mu + \underbrace{i g_s \frac{\lambda_a}{2} A_{\mu a}}_{\text{only for quarks}} + \underbrace{i g \frac{\tau_l}{2} W_{l \mu}}_{\text{only for $\SU(2)$ doublets}} + i g' \hat{Y} B_\mu \label{0.15}
+\end{equation}
+with $\hat {Y} \psi = Y_\psi \psi$.
+
+Field strength tensors
+\begin{align}
+   F_{\mu\nu}^a &= \partial_\mu A^a_\nu - \partial_\nu A_\mu^a + g_s f^{abc} A_\mu^b A_\nu^c \label{0.15} \\
+   W_{\mu\nu}^a &= \partial_\mu W_\nu^i - \partial_\nu W_\mu^i + g \epsilon^{ijk} W_\mu^j W_\nu^k \label{0.16} \\
+   B_{\mu\nu} &= \partial_\mu B_\nu - \partial_\nu B_\mu \label{0.17}
+\end{align}
+
+Doublets are
+\begin{equation}
+   \begin{split}
+      L_{1L} &= \begin{pmatrix} \nu_e \\ e^- \end{pmatrix}_L, \quad L_{2L} = \begin{pmatrix} \nu_\mu \\ \mu^- \end{pmatrix}_L, \quad L_{3L} = \begin{pmatrix} \nu_\tau \\ \tau^- \end{pmatrix}_L, \\
+      q_{1L} &= \begin{pmatrix} u \\ d \end{pmatrix}_L, \quad q_{2L} = \begin{pmatrix} c \\ s\end{pmatrix}_L, \quad q_{3L} = \begin{pmatrix} t \\ b\end{pmatrix}_L, \quad \phi = \begin{pmatrix} \phi^\dagger \\ \phi^0 \end{pmatrix}
+   \end{split}
+   \label{0.18}
+\end{equation}
+
+\begin{equation}
+   \phi^\dagger \cdot L_{1L} = \phi^{\dagger *} \nu_{eL} + \phi^{0 *} e^-_L; \quad \phi \cdot q_{1L} = \phi^\dagger d_L - \phi^0 u_L \label{0.19}
+\end{equation}
